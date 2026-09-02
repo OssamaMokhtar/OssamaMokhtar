@@ -2,44 +2,67 @@
 
 **AI Product Manager · Dubai, UAE**
 
-I turn ambiguous AI capability into products that survive contact with regulation, cost curves, and real users. Currently at BubblesUPs. Focused on financial services — credit risk, RAG systems, and bilingual (AR/EN) product design for the GCC market.
+I build AI products end to end — problem definition, system architecture, security model, and shipped prototype. Currently at BubblesUPs. Eight products across fintech, healthcare, hospitality, and education, each documented to the standard I'd expect to defend in an architecture review.
 
 ---
 
-### What I'm building
+## Products
 
-**[Product Leadership OS](https://github.com/OssamaMokhtar/product-leadership-os)** — an AI-native operating system for product leadership
-189 specialist agent skills, deduplicated from a ~250-name brief, ranked by leverage, and wired into a dependency graph. Ships as Claude Code skills, an Obsidian vault, and an interactive explorer.
-`AI agents` · `product operations` · `knowledge graphs`
+### 🏦 Fintech & Banking
 
 **[RiskFree](https://github.com/OssamaMokhtar/RiskFree)** — AI credit scoring & risk platform for GCC lending
-Full product architecture for retail and SME credit decisioning: PD/LGD scoring models, fraud & AML screening, an LLM copilot over regulatory documents, and an Arabic/English tone system.
-`fintech` · `credit risk` · `RAG` · `bilingual UX`
+PD/LGD models, fraud & AML screening, an LLM copilot over regulatory policy, bilingual AR/EN. **11 architecture documents** covering data model, ML pipeline, RAG design, scoring logic, and security posture.
+[Live demo →](https://ossamamokhtar.github.io/RiskFree/)
 
-**[OS3](https://github.com/OssamaMokhtar/OS3)** — Gemini-powered note-taking app
-`TypeScript` · `Vite` · `Google Gemini API`
+**[ServeMe](https://github.com/OssamaMokhtar/ServeMe-Projects)** — QR-based split-by-item restaurant checkout
+Each diner selects their own items and settles independently. No single payer fronting the table.
+
+### 🏥 Healthcare
+
+**[Tabibi](https://github.com/OssamaMokhtar/Tabibi)** — bilingual AI family health advocate for MENA
+Schema-constrained symptom triage (`SELF_CARE` / `GP_CONSULT` / `EMERGENCY`), family health profiles, medication management. Built AR/EN from the first commit — the 2am "is this serious?" question doesn't get asked in English.
+
+### 🏨 Hospitality
+
+**[Avera AI](https://github.com/OssamaMokhtar/Avera-AI)** — autonomous revenue management for GCC hospitality
+Demand forecasting and dynamic pricing against RevPAR, ADR, and RevPASH, with Gulf demand patterns (Ramadan, Eid, Fri–Sat weekend) as first-class inputs rather than anomalies.
+
+### 🎓 Language Learning
+
+**[Slang](https://github.com/OssamaMokhtar/Slang)** — AI pronunciation & fluency coach
+Real-time phonetic analysis with per-phoneme scoring, articulation visualisation, and generated lesson plans targeting your weakest sounds. Most language apps grade vocabulary because it's easy to score; pronunciation is where adult learners actually stall.
+
+### 🧠 Product Leadership Tooling
+
+**[Product Leadership OS](https://github.com/OssamaMokhtar/product-leadership-os)** — an AI-native operating system for product leadership
+189 specialist agent skills, deduplicated from a ~250-name brief, ranked by leverage, wired into a dependency graph. Ships as Claude Code skills, an Obsidian vault, and an interactive explorer.
+[Explore it →](https://ossamamokhtar.github.io/product-leadership-os/)
+
+**[PolyVerses](https://github.com/OssamaMokhtar/PolyVerses)** — agentic product management workbench
+Orchestrate specialist AI agents with observability, tracing, and a prompt console. The interesting question isn't what the model said — it's which agent ran, on what input, and why.
+
+**[OS3](https://github.com/OssamaMokhtar/OS3)** — AI-assisted note taking
+Retrieval over generation. The failure mode in personal notes isn't a blank page, it's write-only storage you never search again.
 
 ---
 
-### How I work
+## How I work
 
 - **Discovery → spec → architecture.** I document tradeoffs before writing a roadmap, because the tradeoff *is* the decision.
 - **AI economics before AI features.** Inference cost per successful outcome is a product decision, not a finance one.
-- **Bilingual by design.** AR/EN is a first-class constraint in the GCC, not a localisation task bolted on at the end.
+- **Security is a product surface.** Firestore rules, key handling, and data boundaries get designed alongside the UI, not bolted on at review time.
+- **Bilingual by design.** AR/EN is a first-class constraint in the GCC, not a localisation task at the end.
 - **Evidence over enthusiasm.** A business case nobody circles back to verify was never a business case.
 
 ---
 
-### Credentials
+## Credentials
 
-- IBM AI Product Manager
-- IBM Product Manager
-- Generative AI for Product Managers
-- Product Management Certification
+IBM AI Product Manager · IBM Product Manager · Generative AI for Product Managers · Product Management Certification
 
 ---
 
-### Reach me
+## Reach me
 
 [LinkedIn](https://www.linkedin.com/in/ossama-mokhtar/) · [X @OsamaElMokhtar](https://x.com/OsamaElMokhtar) · Dubai, UAE
 
