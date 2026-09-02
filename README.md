@@ -41,8 +41,8 @@ Real-time phonetic analysis with per-phoneme scoring, articulation visualisation
 **[PolyVerses](https://github.com/OssamaMokhtar/PolyVerses)** — agentic product management workbench
 Orchestrate specialist AI agents with observability, tracing, and a prompt console. The interesting question isn't what the model said — it's which agent ran, on what input, and why.
 
-**[OS3](https://github.com/OssamaMokhtar/OS3)** — AI-assisted note taking
-Retrieval over generation. The failure mode in personal notes isn't a blank page, it's write-only storage you never search again.
+**[CareerOracle Intelligence](https://github.com/OssamaMokhtar/OS3)** — career platform built on measured signal
+Cognitive assessment, CV parsing, and live market demand in one profile. Career advice is usually built on self-report, which is the input least likely to be accurate about its own blind spots.
 
 ---
 
