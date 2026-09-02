@@ -41,6 +41,6 @@ Full product architecture for retail and SME credit decisioning: PD/LGD scoring 
 
 ### Reach me
 
-[LinkedIn](https://www.linkedin.com/in/YOUR-HANDLE) · [X @OsamaElMokhtar](https://x.com/OsamaElMokhtar) · Dubai, UAE
+[LinkedIn](https://www.linkedin.com/in/ossama-mokhtar/) · [X @OsamaElMokhtar](https://x.com/OsamaElMokhtar) · Dubai, UAE
 
 *Open to AI product roles — GCC or remote.*
