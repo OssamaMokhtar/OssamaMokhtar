@@ -31,6 +31,7 @@ Demand forecasting and dynamic pricing against RevPAR, ADR, and RevPASH, with Gu
 
 **[Slang](https://github.com/OssamaMokhtar/Slang)** — AI pronunciation & fluency coach
 Real-time phonetic analysis with per-phoneme scoring, articulation visualisation, and generated lesson plans targeting your weakest sounds. Most language apps grade vocabulary because it's easy to score; pronunciation is where adult learners actually stall.
+[Try it live →](https://slang-ossamamokhtars-projects.vercel.app)
 
 ### 🧠 Product Leadership Tooling
 
@@ -43,6 +44,7 @@ Orchestrate specialist AI agents with observability, tracing, and a prompt conso
 
 **[CareerOracle Intelligence](https://github.com/OssamaMokhtar/OS3)** — career platform built on measured signal
 Cognitive assessment, CV parsing, and live market demand in one profile. Career advice is usually built on self-report, which is the input least likely to be accurate about its own blind spots.
+[Try it live →](https://os-3-ossamamokhtars-projects.vercel.app)
 
 ---
 
