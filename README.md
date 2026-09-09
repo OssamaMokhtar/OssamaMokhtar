@@ -52,7 +52,10 @@ Expatriates with thin bureau files and SMEs with informal cash flow are invisibl
 **[ServeMe](https://github.com/OssamaMokhtar/ServeMe-Projects)** — QR split-by-item restaurant checkout
 Even-split apps get it wrong when one person had tap water. Each diner settles only what they ordered.
 
-### Healthcare
+### Health · Human performance
+**[PolySync](https://github.com/OssamaMokhtar/PolySync)** — AI coaching for hybrid athletes, human coach in the loop
+Endurance and strength adaptations interfere with each other. Mainstream apps run two plans in parallel and let the athlete absorb the collision. A deterministic engine owns every load prescription; the LLM explains and *proposes* adaptations as structured deltas, each of which must clear a bounds checker before it reaches an athlete. Prompt injection cannot change training load, and a provider outage degrades the explanation rather than the training. **[12 architecture documents](https://github.com/OssamaMokhtar/PolySync/tree/main/docs)** — programming engine, RAG grounding, evaluation harness, and a decision log where every ADR carries a reversal trigger.
+
 **[Tabibi](https://github.com/OssamaMokhtar/Tabibi)** — bilingual AI family health advocate for MENA
 Schema-constrained triage returning a defined `SELF_CARE` / `GP_CONSULT` / `EMERGENCY` enum, so an emergency is a hard UI path rather than prose a frightened user skims. Recall on `EMERGENCY` is the gate; a single miss fails the build.
 
