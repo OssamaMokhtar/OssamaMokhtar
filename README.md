@@ -45,37 +45,17 @@ Earlier: Performance Manager at Vodafone leading a 30-person cross-functional te
 
 Public prototypes and architecture, built to think through problems I care about. Live links where deployed.
 
-### Financial services
-**[RLens](https://github.com/OssamaMokhtar/RLens)** — AI credit scoring & risk platform for GCC lending
-Expatriates with thin bureau files and SMEs with informal cash flow are invisible to conventional scoring. PD/LGD models, AML screening, an LLM copilot over regulatory policy, and an AR/EN tone system. **[11 architecture documents](https://github.com/OssamaMokhtar/RLens/tree/main/docs)** — data model, ML pipeline, RAG design, scoring logic, security posture. · [Demo](https://ossamamokhtar.github.io/RLens/)
-
-**[ServeMe](https://github.com/OssamaMokhtar/ServeMe-Projects)** — QR split-by-item restaurant checkout
-Even-split apps get it wrong when one person had tap water. Each diner settles only what they ordered.
+### AI product tooling
+**[PolyVerses](https://github.com/OssamaMokhtar/PolyVerses)** — agentic PM workbench + 183-skill agent library
+Orchestration console, agent network diagram, observability dashboard, and a deduplicated skill library of 183 specialist agent skills from Product Leadership OS — ranked by leverage and wired into a dependency graph. Ships as a React/Firebase app and a Claude Code-ready skills layer. The interesting question is never what the model said — it is which agent ran, on what input, and why. · [Explore skills](https://github.com/OssamaMokhtar/PolyVerses/blob/main/SKILLS_INDEX.md)
 
 ### Health · Human performance
 **[PolySync](https://github.com/OssamaMokhtar/PolySync)** — AI coaching for hybrid athletes, human coach in the loop
 Endurance and strength adaptations interfere with each other. Mainstream apps run two plans in parallel and let the athlete absorb the collision. A deterministic engine owns every load prescription; the LLM explains and *proposes* adaptations as structured deltas, each of which must clear a bounds checker before it reaches an athlete. Prompt injection cannot change training load, and a provider outage degrades the explanation rather than the training. **[12 architecture documents](https://github.com/OssamaMokhtar/PolySync/tree/main/docs)** — programming engine, RAG grounding, evaluation harness, and a decision log where every ADR carries a reversal trigger.
 
-**[Tabibi](https://github.com/OssamaMokhtar/Tabibi)** — bilingual AI family health advocate for MENA
-Schema-constrained triage returning a defined `SELF_CARE` / `GP_CONSULT` / `EMERGENCY` enum, so an emergency is a hard UI path rather than prose a frightened user skims. Recall on `EMERGENCY` is the gate; a single miss fails the build.
-
-**[Fluvio](https://github.com/OssamaMokhtar/Fluvio)** — AI pronunciation & fluency coach
-Real-time phonetic analysis, per-phoneme scoring, and articulation visualization. Most language apps grade vocabulary because it is easy to score; pronunciation is where adult learners actually stall.
-
-### AI product tooling
-**[Product Leadership OS](https://github.com/OssamaMokhtar/product-leadership-os)** — an operating system for product leadership
-189 specialist agent skills, deduplicated from a ~250-name brief and ranked by leverage. The deduplication *is* the product: a library with three agents that write the same memo is worse than one that writes it well. Ships as Claude Code skills, an Obsidian knowledge graph, and an interactive explorer. · [Explore](https://ossamamokhtar.github.io/product-leadership-os/)
-
-**[PolyVerses](https://github.com/OssamaMokhtar/PolyVerses)** — agentic PM workbench
-Orchestration console, agent network diagram, observability. The interesting question is never what the model said — it is which agent ran, on what input, and why.
-
 ### Hospitality · Education · Careers
-**[Avera AI](https://github.com/OssamaMokhtar/Avera-AI)** — yield optimisation for GCC hospitality. RevPAR/ADR/RevPASH with Ramadan, Eid, and the Fri–Sat weekend as first-class demand inputs, not anomalies.
-
 **[Hirena](https://github.com/OssamaMokhtar/Hirena)** — AI-powered skills assessment & career pathing
 Assess your skills against any job. See your gap. Find your path. Bilingual AR/EN, MENA-first. · [Live](https://hirena-ossamamokhtars-projects.vercel.app)
-
-**[OS3](https://github.com/OssamaMokhtar/OS3)** — career platform built on measured signal rather than self-report. · [Live](https://os-3-ossamamokhtars-projects.vercel.app)
 
 ---
 
