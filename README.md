@@ -31,11 +31,11 @@ Earlier: Performance Manager at Vodafone leading a 30-person cross-functional te
 
 **Unit economics before features.** Cost per successful outcome is a product decision before it is a finance one. An AI feature whose inference cost scales with engagement has inverted SaaS margins, and that belongs in the spec — not the post-mortem.
 
-**Evals are the quality bar, not a demo.** If you cannot state what "good" means for a model's output and measure it on every change, you do not have a product — you have a prompt that worked once. [My triage eval suite](https://github.com/OssamaMokhtar/Tabibi/tree/main/evals) fails the build on a single missed emergency, and never on over-caution. The asymmetry is the design.
+**Evals are the quality bar, not a demo.** If you cannot state what "good" means for a model's output and measure it on every change, you do not have a product — you have a prompt that worked once. Build evals that fail the build on a single missed critical case, never on over-caution. The asymmetry is the design.
 
 **Security is a product surface.** Key handling, data boundaries, and access rules get designed alongside the interface. I have shipped Firestore rulesets with ownership verification and field-level immutability, and I have caught client-side key exposure in my own code and fixed it before deploy.
 
-**Bilingual by construction.** In the GCC, Arabic/English is a structural constraint, not a localisation ticket. RTL that mirrors *structurally* rather than a translated LTR page — [see it side by side](https://github.com/OssamaMokhtar/Tabibi).
+**Bilingual by construction.** In the GCC, Arabic/English is a structural constraint, not a localisation ticket. RTL that mirrors *structurally* rather than a translated LTR page is table stakes.
 
 **The tradeoff is the decision.** I document tradeoffs before roadmaps. A roadmap without a stated non-goal is a wish list.
 
@@ -45,13 +45,20 @@ Earlier: Performance Manager at Vodafone leading a 30-person cross-functional te
 
 Public prototypes and architecture, built to think through problems I care about. Live links where deployed.
 
+### Financial services
+**[RLens](https://github.com/OssamaMokhtar/RLens)** — AI credit scoring & risk platform for GCC lending
+Expatriates with thin bureau files and SMEs with informal cash flow are invisible to conventional scoring. PD/LGD models, AML screening, an LLM copilot over regulatory policy, and an AR/EN tone system.
+
+### Health · Human performance
+**[Fluvio](https://github.com/OssamaMokhtar/Fluvio)** — AI pronunciation & fluency coach
+Real-time phonetic analysis, per-phoneme scoring, and articulation visualization. Most language apps grade vocabulary because it is easy to score; pronunciation is where adult learners actually stall.
+
+**[PolySync](https://github.com/OssamaMokhtar/PolySync)** — AI coaching for hybrid athletes, human coach in the loop
+Endurance and strength adaptations interfere with each other. Mainstream apps run two plans in parallel and let the athlete absorb the collision. A deterministic engine owns every load prescription; the LLM explains and *proposes* adaptations as structured deltas, each of which must clear a bounds checker before it reaches an athlete. Prompt injection cannot change training load, and a provider outage degrades the explanation rather than the training. **[12 architecture documents](https://github.com/OssamaMokhtar/PolySync/tree/main/docs)** — programming engine, RAG grounding, evaluation harness, and a decision log where every ADR carries a reversal trigger.
+
 ### AI product tooling
 **[PolyVerses](https://github.com/OssamaMokhtar/PolyVerses)** — agentic PM workbench + 183-skill agent library
 Orchestration console, agent network diagram, observability dashboard, and a deduplicated skill library of 183 specialist agent skills from Product Leadership OS — ranked by leverage and wired into a dependency graph. Ships as a React/Firebase app and a Claude Code-ready skills layer. The interesting question is never what the model said — it is which agent ran, on what input, and why. · [Explore skills](https://github.com/OssamaMokhtar/PolyVerses/blob/main/SKILLS_INDEX.md)
-
-### Health · Human performance
-**[PolySync](https://github.com/OssamaMokhtar/PolySync)** — AI coaching for hybrid athletes, human coach in the loop
-Endurance and strength adaptations interfere with each other. Mainstream apps run two plans in parallel and let the athlete absorb the collision. A deterministic engine owns every load prescription; the LLM explains and *proposes* adaptations as structured deltas, each of which must clear a bounds checker before it reaches an athlete. Prompt injection cannot change training load, and a provider outage degrades the explanation rather than the training. **[12 architecture documents](https://github.com/OssamaMokhtar/PolySync/tree/main/docs)** — programming engine, RAG grounding, evaluation harness, and a decision log where every ADR carries a reversal trigger.
 
 ### Hospitality · Education · Careers
 **[Hirena](https://github.com/OssamaMokhtar/Hirena)** — AI-powered skills assessment & career pathing
