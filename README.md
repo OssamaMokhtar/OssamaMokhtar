@@ -17,7 +17,7 @@ It doesn't mean "uses an LLM". It means the product is designed around what mode
 | Capability | How it shows up | Evidence |
 |---|---|---|
 | **The model proposes; the system decides** | LLM output is a structured proposal. A deterministic engine owns the decision, and a bounds checker gates it before anyone sees it | [PolySync bounds checker](https://github.com/OssamaMokhtar/PolySync/blob/main/app/src/engine/boundsChecker.ts) · [RLens ADR-001](https://github.com/OssamaMokhtar/RLens/blob/main/docs/13-decision-log.md) |
-| **Evals are release gates** | Pass bars are written before the feature. CI fails on a single critical miss, never on over-caution | [PolySync eval results](https://github.com/OssamaMokhtar/PolySync/blob/main/evals/results/latest.json) · [Youna crisis golden set](https://github.com/OssamaMokhtar/youna/blob/main/src/lib/__tests__/safety.test.ts) |
+| **Evals are release gates** | Pass bars are written before the feature. CI fails on a single critical miss, never on over-caution | [PolySync eval results](https://github.com/OssamaMokhtar/PolySync/blob/main/evals/README.md) · [Youna crisis golden set](https://github.com/OssamaMokhtar/youna/blob/main/src/lib/__tests__/safety.test.ts) |
 | **Safety paths never touch the model** | When crisis language is detected, the reply is fixed text plus resources. The model is not asked | [Youna safety module](https://github.com/OssamaMokhtar/youna/blob/main/src/lib/safety.ts) |
 | **Unit economics live in the code** | Cost logged per scored utterance; a daily AI budget that fails closed; per-device rate limits, because carrier-grade NAT puts many GCC mobile users behind one IP | [Fluvio cost meter](https://github.com/OssamaMokhtar/Fluvio/blob/main/services/costMeter.ts) · [PolyVerses API guards](https://github.com/OssamaMokhtar/PolyVerses/blob/main/server/guard.ts) |
 | **Claims as code** | Every documented claim is an executable check. If a doc drifts from the code, CI fails and names both | [Fluvio claims verifier (19 claims)](https://github.com/OssamaMokhtar/Fluvio/blob/main/scripts/verify-claims.mjs) · [PLOS library validator](https://github.com/OssamaMokhtar/product-leadership-os/blob/main/scripts/validate.mjs) |
@@ -41,14 +41,26 @@ flowchart LR
 
 ## Flagship
 
-### [PolySync](https://github.com/OssamaMokhtar/PolySync): AI coaching for hybrid athletes, where the model cannot prescribe
+### [PolySync](https://github.com/OssamaMokhtar/PolySync): AI coaching for hybrid athletes, where the model can propose but never prescribe
 
-Endurance and strength training interfere with each other. Most apps run two plans in parallel and leave the athlete to absorb the collision. In PolySync a **deterministic engine owns every load prescription**. The LLM explains and *proposes* changes, and each proposal must clear a bounds checker before it reaches an athlete. Anything blocked goes to a human coach.
+**[Open ProjectOS](https://ossamamokhtar.github.io/PolySync/)**, the interactive product page that runs the real engine in the browser · [Case study](https://github.com/OssamaMokhtar/PolySync/blob/main/product/case-study.md) · [Strategy](https://github.com/OssamaMokhtar/PolySync/blob/main/product/strategy.md) · [Financial model](https://github.com/OssamaMokhtar/PolySync/blob/main/product/financial-model.md) · [Pilot plan](https://github.com/OssamaMokhtar/PolySync/blob/main/product/pilot-plan.md)
 
-- **Measured on every push:** 0 contraindicated exercises in 8,640 generated plans; 2,067 of 2,067 unsafe proposals blocked and escalated; 194 of 194 safe substitutions accepted.
-- **Not yet measured:** model proposal quality, coach minutes per athlete, real users. The rules are v0 and not yet coach-signed.
+Endurance and strength training interfere with each other, mostly at the expense of power. In PolySync a **deterministic engine schedules every session** under nine rules, each citing the study behind it. The LLM explains and *proposes*; a proposal reaches the athlete only if every rule passes, and what the engine cannot resolve goes to the club's coach. Clubs buy the coach capacity.
 
-[Architecture docs](https://github.com/OssamaMokhtar/PolySync/blob/main/docs/README.md) · [Decision log](https://github.com/OssamaMokhtar/PolySync/blob/main/docs/10-decision-log.md) · [Eval harness](https://github.com/OssamaMokhtar/PolySync/blob/main/evals/run.ts) · [Gaps](https://github.com/OssamaMokhtar/PolySync/blob/main/docs/GAPS.md)
+| Measured on every push | Result |
+|---|---|
+| Unsafe proposals blocked by the expected rule and routed to a coach (21 attack types, incl. injected text) | **7,877 of 7,877** |
+| Weeks delivered on a low-readiness day that break a rule | **0 of 4,628** |
+| Engine weeks that break a blocking rule | **0 of 3,240** |
+| Contraindicated exercises in generated plans | **0 of 8,640** |
+
+**The product call.** The simulation showed that one onboarding answer, *can you train twice on some days?*, decides whether hard sessions survive a bad day: the engine keeps 77% for flexible athletes and 6% for rigid ones. So it is the first onboarding question and the pilot's recruiting filter.
+
+**What I got wrong.** An adversarial review of my own flagship found seven problems, including a headline number that was an artifact and a pilot pass bar below the model's own break-even. All are fixed, and CI now fails if the README, the pilot bars or the model drift from the eval results ([case study](https://github.com/OssamaMokhtar/PolySync/blob/main/product/case-study.md#what-i-got-wrong-and-how-the-review-caught-it)).
+
+**Not yet measured:** model proposal quality, real coach minutes, users. The rule parameters are from the literature and not yet coach-signed. 19 of 24 model drivers are hypotheses, each mapped to the pilot event that will replace it.
+
+[Architecture docs](https://github.com/OssamaMokhtar/PolySync/blob/main/docs/README.md) · [Decision log](https://github.com/OssamaMokhtar/PolySync/blob/main/docs/10-decision-log.md) · [Evidence register](https://github.com/OssamaMokhtar/PolySync/blob/main/product/evidence.md) · [Risk register](https://github.com/OssamaMokhtar/PolySync/blob/main/product/risk-register.md) · [Gaps](https://github.com/OssamaMokhtar/PolySync/blob/main/docs/GAPS.md)
 
 ---
 
@@ -58,7 +70,7 @@ Every repo carries the same architecture doc set: status, system architecture, d
 
 | Project | What it is | AI-native pattern it proves | Status | Architecture docs |
 |---|---|---|---|---|
-| **[PolySync](https://github.com/OssamaMokhtar/PolySync)** | AI coaching for hybrid athletes, coach in the loop | Model proposes, engine decides; safety evals gate every push | Prototype; safety layer measured | [Docs](https://github.com/OssamaMokhtar/PolySync/blob/main/docs/README.md) · [ADRs](https://github.com/OssamaMokhtar/PolySync/blob/main/docs/10-decision-log.md) · [Gaps](https://github.com/OssamaMokhtar/PolySync/blob/main/docs/GAPS.md) |
+| **[PolySync](https://github.com/OssamaMokhtar/PolySync)** | AI coaching for hybrid athletes, coach in the loop | Model proposes, engine decides; 7,877 attacks blocked in CI; product layer generated from data | Prototype; engine and safety measured; pilot designed | [Docs](https://github.com/OssamaMokhtar/PolySync/blob/main/docs/README.md) · [ADRs](https://github.com/OssamaMokhtar/PolySync/blob/main/docs/10-decision-log.md) · [Gaps](https://github.com/OssamaMokhtar/PolySync/blob/main/docs/GAPS.md) |
 | **[Fluvio](https://github.com/OssamaMokhtar/Fluvio)** | Pronunciation and fluency coach (Whisper → GPT-4o), 13 practice languages | Cost per utterance, spend ceiling, claims verifier | Deployed on Vercel. Scores are model judgements, not acoustic measurement, and the product says so | [Docs](https://github.com/OssamaMokhtar/Fluvio/blob/main/docs/README.md) · [ADRs](https://github.com/OssamaMokhtar/Fluvio/blob/main/docs/10-decision-log.md) · [Gaps](https://github.com/OssamaMokhtar/Fluvio/blob/main/docs/GAPS.md) |
 | **[Youna](https://github.com/OssamaMokhtar/youna)** | AI wellness companion: check-ins, mood, journaling. Not a therapist | Deterministic crisis path, golden set in CI, multi-provider fallback | Pre-release | [Docs](https://github.com/OssamaMokhtar/youna/blob/main/docs/README.md) · [ADRs](https://github.com/OssamaMokhtar/youna/blob/main/docs/10-decision-log.md) · [Gaps](https://github.com/OssamaMokhtar/youna/blob/main/docs/GAPS.md) |
 | **[Hirena](https://github.com/OssamaMokhtar/Hirena)** | Skills self-assessment and gap analysis for PMs, MENA-first | Deterministic role-weighted scoring, where the LLM only proposes levels; labelled fallback; compliance by design | Prototype, text only | [Docs](https://github.com/OssamaMokhtar/Hirena/blob/main/docs/README.md) · [ADRs](https://github.com/OssamaMokhtar/Hirena/blob/main/docs/10-decision-log.md) · [Gaps](https://github.com/OssamaMokhtar/Hirena/blob/main/docs/GAPS.md) |
@@ -73,8 +85,9 @@ Every number below is produced by CI on each push and can be reproduced from the
 | Project | What is measured | Result |
 |---|---|---|
 | PolySync | Contraindicated exercises in generated plans | **0 of 8,640** |
-| PolySync | Unsafe proposals blocked and escalated to a coach | **2,067 of 2,067** |
-| PolySync | Safe substitutions accepted | **194 of 194** |
+| PolySync | Unsafe proposals blocked by the expected rule and routed to a coach | **7,877 of 7,877** |
+| PolySync | Safe proposals accepted (the rules are not a wall) | **657 of 657** |
+| PolySync | Delivered weeks breaking a rule on a low-readiness day | **0 of 4,628** |
 | PolySync | Rule table agreement with hand labels (AI-assisted, not yet coach-reviewed) | 49 of 49 |
 | Youna | Crisis phrases detected · everyday phrases wrongly flagged | 20 of 20 · 0 of 9 |
 | Fluvio | Documented claims verified against source | 19 of 19 |
