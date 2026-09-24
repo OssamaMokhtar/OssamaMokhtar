@@ -43,7 +43,7 @@ flowchart LR
 
 ### [PolySync](https://github.com/OssamaMokhtar/PolySync): AI coaching for hybrid athletes, where the model can propose but never prescribe
 
-**[Open ProjectOS](https://ossamamokhtar.github.io/PolySync/)**, the interactive product page that runs the real engine in the browser · [Case study](https://github.com/OssamaMokhtar/PolySync/blob/main/product/case-study.md) · [Strategy](https://github.com/OssamaMokhtar/PolySync/blob/main/product/strategy.md) · [Financial model](https://github.com/OssamaMokhtar/PolySync/blob/main/product/financial-model.md) · [Pilot plan](https://github.com/OssamaMokhtar/PolySync/blob/main/product/pilot-plan.md)
+**[Open ProjectOS](https://ossamamokhtar.github.io/PolySync/)**, the interactive product page that runs the real engine in the browser · [70-second walkthrough](https://github.com/OssamaMokhtar/PolySync/blob/main/docs/media/projectos-walkthrough.mp4) · [One-page PRD](https://github.com/OssamaMokhtar/PolySync/blob/main/product/prd.md) · [Case study](https://github.com/OssamaMokhtar/PolySync/blob/main/product/case-study.md) · [Strategy](https://github.com/OssamaMokhtar/PolySync/blob/main/product/strategy.md) · [Financial model](https://github.com/OssamaMokhtar/PolySync/blob/main/product/financial-model.md) · [Pilot plan](https://github.com/OssamaMokhtar/PolySync/blob/main/product/pilot-plan.md)
 
 Endurance and strength training interfere with each other, mostly at the expense of power. In PolySync a **deterministic engine schedules every session** under nine rules, each citing the study behind it. The LLM explains and *proposes*; a proposal reaches the athlete only if every rule passes, and what the engine cannot resolve goes to the club's coach. Clubs buy the coach capacity.
 
@@ -55,6 +55,8 @@ Endurance and strength training interfere with each other, mostly at the expense
 | Contraindicated exercises in generated plans | **0 of 8,640** |
 
 **The product call.** The simulation showed that one onboarding answer, *can you train twice on some days?*, decides whether hard sessions survive a bad day: the engine keeps 77% for flexible athletes and 6% for rigid ones. So it is the first onboarding question and the pilot's recruiting filter.
+
+**The market call.** Three consumer apps at $9–10 a month already claim interference-aware scheduling, so I withdrew my own "unclaimed" thesis and repositioned: PolySync sells clubs a coach console and an audit trail, not the scheduler ([competitive landscape](https://github.com/OssamaMokhtar/PolySync/blob/main/product/competitive-landscape.md), ADR-009).
 
 **What I got wrong.** An adversarial review of my own flagship found seven problems, including a headline number that was an artifact and a pilot pass bar below the model's own break-even. All are fixed, and CI now fails if the README, the pilot bars or the model drift from the eval results ([case study](https://github.com/OssamaMokhtar/PolySync/blob/main/product/case-study.md#what-i-got-wrong-and-how-the-review-caught-it)).
 
