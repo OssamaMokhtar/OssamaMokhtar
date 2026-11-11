@@ -1,6 +1,6 @@
 <h1>Ossama Mokhtar</h1>
 
-<p><strong>AI-Native Product Builder · Founder &amp; Principal, BubblesUPs</strong><br>
+<p><strong>AI-Native Product Builder · Founder &amp; Head of Products, BubblesUPs</strong><br>
 Dubai, UAE: building for GCC, EU and US markets</p>
 
 <p><em>I decide what an AI product should do, then build it far enough to prove the decision holds:<br>
